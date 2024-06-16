@@ -2,12 +2,12 @@
 
 // 1. Create a function named 'greet' that takes one parameter 'name'. 
 // The function should log a greeting message with the provided name. 
-// Call the function with your name as an argument.
+// Call the function with your name as an argument. 
 
 
 // 2. Create a function named 'calculateSum' that takes two parameters 'a' and 'b'. 
 // The function should return the sum of 'a' and 'b'. 
-// Call the function with two numbers of your choice and log the result.
+//  Call the function with two numbers of your choice and log the result.
 
 
 // 3. Create a function named 'outerFunction' that declares a variable 'x' with a value of 10. 
@@ -28,7 +28,7 @@
 
 // 6. Copy 'handleClick' and alter it to be called 'handleClickStopPropagation'. 
 // Then modify the code so that it prevents the click event from propagating to parent elements. 
-// Attach 'handleClickStopPropagation' as a click event listener.
+//Attach 'handleClickStopPropagation' as a click event listener.
 
 
 // 7. Create a function named 'createNewElement' that creates a new 'div' element, 
@@ -40,3 +40,56 @@
 // Note: For tasks 5, 6, and 7, you can use the existing HTML elements with the IDs 'myButton' and 'parentElementId' in the HTML document.
 
 // Remember to use the 'function' keyword to define your functions, and use 'console.log' to log the results. Good luck!
+
+function greet(Destiny) {
+    console.log('Hello,' + Destiny + '!')
+}
+greet('Destiny');
+
+function calculateSum(a, b) {
+    return a + b;
+}
+let result = sum(7, 12)
+console.log(result);
+
+function outerFunctionTwo() {
+    let x = 10;
+
+ function innerFunctionTwo() {
+    console.log(x);
+ }
+
+ return innerFunctionTwo();
+}
+let closure = outerFunction();
+closure();
+
+const button = document.querySelector('#myButton');
+
+function handleClick() {
+    console.log('Button clicked!')
+}
+
+button.addEventListener('click', handleClick)
+
+const innerElement = document.querySelector('.inner');
+
+function handleInnerClick(event) {
+    event.stopPropagation();
+    console.log('Inner element clicked!')
+}
+
+innerElement.addEventListener('click', handleInnerClick)
+
+function handleMouseOver() {
+    console.log('Mouse over new element!');
+}
+const parentElement = document.getElementById('parentElementId');
+
+const newElement = document.createElement('div');
+newElement.className = 'myClass';
+newElement.innerHTML = 'New element'
+
+parentElement.appendChild(newElement);
+
+newElement.addEventListener('mouseover', handleMouseOver);
